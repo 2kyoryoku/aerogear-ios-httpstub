@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F1A72881A16825E0064233D /* AGURLSessionStubs.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3C40A1197BCCD80072D66A /* AGURLSessionStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6F3C40A7197BCCD80072D66A /* AGURLSessionStubs.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F3C40A6197BCCD80072D66A /* AGURLSessionStubs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F3C40AD197BCCD80072D66A /* AGURLSessionStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3C40A1197BCCD80072D66A /* AGURLSessionStubs.framework */; };
 		6F3C40B4197BCCD80072D66A /* AGURLSessionStubsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C40B3197BCCD80072D66A /* AGURLSessionStubsTests.swift */; };
 		6F3C40C0197BCD3C0072D66A /* StubResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C40BD197BCD3C0072D66A /* StubResponse.swift */; };
 		6F3C40C1197BCD3C0072D66A /* StubsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C40BE197BCD3C0072D66A /* StubsManager.swift */; };
 		6F3C40C2197BCD3C0072D66A /* StubURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3C40BF197BCD3C0072D66A /* StubURLProtocol.swift */; };
+		6FE049B31A1606F700BDC34C /* stub.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FE049B21A1606F700BDC34C /* stub.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6F1A72871A1682510064233D /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6F1A72881A16825E0064233D /* AGURLSessionStubs.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6F3C40A1197BCCD80072D66A /* AGURLSessionStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AGURLSessionStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F3C40A5197BCCD80072D66A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +65,7 @@
 		6F3C40BD197BCD3C0072D66A /* StubResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubResponse.swift; sourceTree = "<group>"; };
 		6F3C40BE197BCD3C0072D66A /* StubsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubsManager.swift; sourceTree = "<group>"; };
 		6F3C40BF197BCD3C0072D66A /* StubURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubURLProtocol.swift; sourceTree = "<group>"; };
+		6FE049B21A1606F700BDC34C /* stub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stub.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				6F3C40B2197BCCD80072D66A /* Info.plist */,
+				6FE049B21A1606F700BDC34C /* stub.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -164,6 +182,7 @@
 				6F3C40A8197BCCD80072D66A /* Sources */,
 				6F3C40A9197BCCD80072D66A /* Frameworks */,
 				6F3C40AA197BCCD80072D66A /* Resources */,
+				6F1A72871A1682510064233D /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FE049B31A1606F700BDC34C /* stub.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
