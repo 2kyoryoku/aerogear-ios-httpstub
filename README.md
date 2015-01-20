@@ -2,7 +2,7 @@
 
 A small library inspired by [OHHTTPStubs](https://github.com/AliSoftware/OHHTTPStubs) to stub your network requests written in Swift.
 
-> This module is beta software, it currently supports Xcode 6.1
+> This module is beta software, it currently supports Xcode 6.1.1
 
 ## Example Usage
 
@@ -42,7 +42,7 @@ waitForExpectationsWithTimeout(10, handler: nil)
 StubsManager.stubRequestsPassingTest({ (request: NSURLRequest!) -> Bool in
     return true
 }, withStubResponse:( { (request: NSURLRequest!) -> StubResponse in
-     return StubResponse(filename: "mystubbedjson.json", location:.Bundle(NSBundle(forClass: AGURLSessionStubsTests.self)), statusCode: 200, headers: ["Content-Type" : "text/json"])
+     return StubResponse(filename: "mystubbedjson.json", location:.Bundle(NSBundle(forClass: AeroGearHttpStubTests.self)), statusCode: 200, headers: ["Content-Type" : "text/json"])
 }))
 
 // or
@@ -54,34 +54,34 @@ StubsManager.stubRequestsPassingTest({ (request: NSURLRequest!) -> Bool in
 }))
 ```
 
-## Adding this library to your project
-To use AGURLSessionStubs to test your iOS applications, follow these 3 easy steps:
+## Adding the library to your project 
+To add the library in your project, you can either use [Cocoapods](http://cocoapods.org) or manual install in your project. See the respective sections below for instructions:
 
-1. Clone the aerogear-ios-httpstub repository
-2. Add `AGURLSessionStubs.xcodeproj` to your test target
-3. Start using it!
-
-### 1. Clone the aerogear-ios-httpstub repository
+### Using [Cocoapods](http://cocoapods.org)
+At this time, Cocoapods support for Swift frameworks is supported in a [pre-release](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/). In your ```Podfile``` add:
 
 ```
-git clone git@github.com:aerogear/aerogear-ios-httpstub.git
+pod 'AeroGearHttpStub'
 ```
-You can alternatively add the project as github submodule to ease configuration for other users. 
 
-### 2. Add `AGURLSessionStubs.xcodeproj` to your test target
+and then:
 
-Right-click on the group containing your application's tests and
-select `Add Files To YourApp...`.
+```bash
+pod install
+```
 
-Choose `AGURLSessionStubs.xcodeproj`
+to install your dependencies
 
-Once you've added the Quick project, you should see it in Xcode's project
-navigator, grouped with your tests.
+### Manual Installation
+Follow these steps to add the library in your Swift project:
 
-![](AGURLSessionStubs_usage.png)
+1. Add AeroGearHttpStub as a [submodule](http://git-scm.com/docs/git-submodule) in your project. Open a terminal and navigate to your project directory. Then enter:
+```bash
+git submodule add https://github.com/aerogear/aerogear-ios-httpstub.git
+```
+2. Open the `aerogear-ios-httpstub` folder, and drag the `AeroGearHttpStub.xcodeproj` into the file navigator in Xcode.
+3. In Xcode select your application target  and under the "Targets" heading section, ensure that the 'iOS  Deployment Target'  matches the application target of AeroGearHttpStub.framework (Currently set to 8.0).
+5. Select the  "Build Phases"  heading section,  expand the "Target Dependencies" group and add  `AeroGearHttpStub.framework`.
+7. Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `AeroGearHttpStub.framework`.
 
-See project [aerogear-ios-http](https://github.com/aerogear/aerogear-ios-http) as an example using it.
-
-### 3. Start using it!
-
-If you run into any problems, please [file an issue](http://issues.jboss.org/browse/AEROGEAR) and join our [mailing list](https://lists.jboss.org/mailman/listinfo/aerogear-dev)
+If you run into any problems, please [file an issue](http://issues.jboss.org/browse/AEROGEAR) and/or ask our [user mailing list](https://lists.jboss.org/mailman/listinfo/aerogear-users). You can also join our [dev mailing list](https://lists.jboss.org/mailman/listinfo/aerogear-dev).  
